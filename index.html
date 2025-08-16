@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naruto Anime Finder</title>
+  <meta name="description" content="Search anime, view details & trailers, and jump to legal streaming platforms." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Naruto Anime Finder",
+    "url": "https://your-domain.example",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://your-domain.example/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span aria-hidden="true">🍥</span>
+      <h1>Naruto Anime Finder</h1>
+    </div>
+    <nav class="nav">
+      <a href="#" id="nav-home" class="active">Home</a>
+      <a href="#" id="nav-watchlist">Watchlist</a>
+      <a href="tos.html">Terms</a>
+      <a href="dmca.html">DMCA</a>
+    </nav>
+  </header>
+
+  <main class="container" id="app">
+    <section class="search-panel">
+      <input id="searchInput" type="search" placeholder="Search anime (Naruto, One Piece, JJK…)" />
+      <button id="searchBtn" aria-label="Search">Search</button>
+      <select id="seasonSelect" title="Season filter">
+        <option value="">All Seasons</option>
+        <option value="WINTER">Winter</option>
+        <option value="SPRING">Spring</option>
+        <option value="SUMMER">Summer</option>
+        <option value="FALL">Fall</option>
+      </select>
+      <select id="formatSelect" title="Format filter">
+        <option value="">All Formats</option>
+        <option value="TV">TV</option>
+        <option value="MOVIE">Movie</option>
+        <option value="OVA">OVA</option>
+        <option value="ONA">ONA</option>
+        <option value="SPECIAL">Special</option>
+      </select>
+    </section>
+
+    <section id="results" class="grid" aria-live="polite"></section>
+
+    <div class="pager">
+      <button id="prevPage" disabled>Prev</button>
+      <span id="pageInfo">Page 1</span>
+      <button id="nextPage" disabled>Next</button>
+    </div>
+
+    <!-- Details Modal -->
+    <dialog id="detailsModal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Anime</h2>
+        <button id="closeModal" aria-label="Close">✕</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </dialog>
+
+    <!-- Legal-player placeholder (use only if you own streaming rights) -->
+    <dialog id="playerModal">
+      <div class="modal-header">
+        <h2 id="playerTitle">Official Player</h2>
+        <button id="closePlayer" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="player-note">
+          You can embed your licensed stream here (HLS/DASH) via an official player.
+          Do <strong>not</strong> host pirated content.
+        </div>
+        <!-- Example: <video controls src="your-secure-stream.m3u8"></video> -->
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Naruto Anime Finder • Uses AniList data • Trailers via official sources</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
